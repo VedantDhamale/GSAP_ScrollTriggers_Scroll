@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scroll Trigger</title>
+    <link rel="stylesheet" href="./main.css" type="text/css" />
+  </head>
+  <body>
+    <section class="t2">
+      <h1>Scroll Down</h1>
+    </section>
+    <section class="dark">
+      <div class="content">
+        <h2>Travel The World With <br />Us...</h2>
+        <p>Go Get Your Ticket...</p>
+      </div>
+      <img src="travel2.jpg" alt="travel2" />
+    </section>
+    <section></section>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"
+      integrity="sha512-7Au1ULjlT8PP1Ygs6mDZh9NuQD0A5prSrAUiPHMXpU6g3UMd8qesVnhug5X4RoDr35x5upNpx0A6Sisz1LSTXA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/ScrollTrigger.min.js"
+      integrity="sha512-LQQDtPAueBcmGXKdOBcMkrhrtqM7xR2bVrnMtYZ8ImAZhFlIb5xrMqQ6uZviyeSB+4mYj89ta8niiCIQM1Gj0w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script>
+      let t1 = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".dark",
+        },
+      });
+
+      t1.from("img", {
+        x: 200,
+        opacity: 0,
+        duration: 1.5,
+      }).from(
+        ".content",
+        {
+          y: 300,
+          opacity: 0,
+          duration: 1,
+        },
+        "-=1"
+      );
+    </script>
+
+    <!-- See the GSAP Documentation for more trigger options -->
+  </body>
+</html>
